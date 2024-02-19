@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct FirstDemoAppApp: App {
+    init(){
+        let providerfactory = AppCheckDebugProviderFactory()
+        AppCheck.setAppCheckProviderFactory(providerfactory)
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

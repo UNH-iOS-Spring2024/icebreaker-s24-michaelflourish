@@ -8,6 +8,26 @@
 import SwiftUI
 import FirebaseFirestore
 
+
+// Custom View Modifier to Style our Questions
+
+struct RoundedBoxStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(Color.blue.opacity(0.2))
+            .foregroundColor(Color.black)
+            .font(.title)
+            .cornerRadius(15)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.blue, lineWidth: 2)
+            )
+            .padding([.horizontal, .bottom])
+    }
+}
+
+
 struct ContentView: View {
     
     let db = Firestore.firestore()
@@ -18,6 +38,8 @@ struct ContentView: View {
     @State var txtQuestion: String = ""
     @State private var submissionMessage: String = ""
     @State var questions = [Question]()
+    @State private var showAnswerField = false
+
     
     var body: some View {
             ZStack {
@@ -29,11 +51,11 @@ struct ContentView: View {
                 ScrollView {
                     VStack(spacing: 20) {
                         VStack {
-                            Text("First Demo App")
+                            Text("Intrigue Inquire")
                                 .font(.system(size: 40))
                                 .bold()
 
-                            Text("Built by Olanrewaju Afolayan")
+                            Text("Built by Michael FLourish")
                         }
 
                         // Separate VStack for form inputs
@@ -43,6 +65,7 @@ struct ContentView: View {
                             TextField("Preferred Name", text: $txtPrefName)
                             Button(action: {
                                 setRandomQuestion()
+                                showAnswerField = true
                             }) {
                                 Text("Get a New Random Question")
                                     .font(.system(size: 20))
@@ -54,12 +77,14 @@ struct ContentView: View {
 
                             if !txtQuestion.isEmpty {
                                 Text(txtQuestion)
-                                    .font(.title2)
-                                    .padding()
+                                    .modifier(RoundedBoxStyle())
                             }
                             
-                            TextField("Answer", text: $txtAnswer)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                            if showAnswerField {
+                                    TextField("Answer", text: $txtAnswer)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                }
+                            
                         }
                         .padding(.horizontal)
 

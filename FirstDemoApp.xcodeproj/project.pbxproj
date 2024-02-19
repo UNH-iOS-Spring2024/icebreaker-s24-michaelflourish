@@ -45,6 +45,7 @@
 		1342414B2B82EB8600913A11 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1342414A2B82EB8600913A11 /* FirebaseRemoteConfigSwift */; };
 		1342414D2B82EB8600913A11 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1342414C2B82EB8600913A11 /* FirebaseStorage */; };
 		1342414F2B82EB8600913A11 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1342414E2B82EB8600913A11 /* FirebaseStorageCombine-Community */; };
+		134BEFF12B83A4CB0039ACB1 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134BEFF02B83A4CB0039ACB1 /* QuestionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		134241042B8243E800913A11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1342410B2B82DD4F00913A11 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		1342410D2B82E39E00913A11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		134BEFF02B83A4CB0039ACB1 /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				134240FD2B8243E600913A11 /* FirstDemoAppApp.swift */,
 				134240FF2B8243E600913A11 /* ContentView.swift */,
+				134BEFF02B83A4CB0039ACB1 /* QuestionsView.swift */,
 				134241012B8243E800913A11 /* Assets.xcassets */,
 				134241032B8243E800913A11 /* Preview Content */,
 				1342410B2B82DD4F00913A11 /* Question.swift */,
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				134BEFF12B83A4CB0039ACB1 /* QuestionsView.swift in Sources */,
 				1342410C2B82DD4F00913A11 /* Question.swift in Sources */,
 				134241002B8243E600913A11 /* ContentView.swift in Sources */,
 				134240FE2B8243E600913A11 /* FirstDemoAppApp.swift in Sources */,
